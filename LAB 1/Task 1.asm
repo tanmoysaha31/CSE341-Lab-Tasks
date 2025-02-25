@@ -12,7 +12,8 @@ MOV AX,@DATA
 MOV DS,AX
 
 ; move the value from AX to BX
-MOV BX, AX
+MOV CX, 5
+MOV BX, CX
 
 ; exit to DOS
 MOV AX, 4C00H
