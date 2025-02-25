@@ -1,0 +1,53 @@
+.MODEL SMALL
+ 
+.STACK 100H
+
+.DATA
+
+; declare variables here
+
+.CODE
+MAIN PROC
+
+; initialize DS
+
+MOV AX,@DATA
+MOV DS,AX
+ 
+; enter your code here
+
+;GENERAL REGISTERS:     
+ADD AX,AX
+ADD AX,BX
+ADD SI,AX
+ADD DI,BX
+
+SUB AX,AX
+SUB AX,BX
+SUB SI,AX
+SUB DI,BX
+
+;MEMORY LOCATION:
+ADD AX,DI
+ADD BX,SI
+
+ADD CS,DI
+ADD DS,SI
+
+SUB AX,DI
+SUB BX,SI
+
+SUB CS,DI
+SUB DS,SI
+
+
+
+ 
+
+;exit to DOS
+               
+MOV AX,4C00H
+INT 21H
+
+MAIN ENDP
+    END MAIN
