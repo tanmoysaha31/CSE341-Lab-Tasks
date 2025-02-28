@@ -1,32 +1,49 @@
 .MODEL SMALL
- 
 .STACK 100H
 
 .DATA
 
-; declare variables here   
-ask db "Enter a letter: $"
-result db "My fav letter is: $"
+ask db "Please insert a character: $"  ; Prompt message
+result db "My fav letter is: $"        ; Output message
+char db ?                              ; Variable to store user input
 
 .CODE
 MAIN PROC
 
-; initialize DS
+; Initialize DS
+MOV AX, @DATA
+MOV DS, AX
 
-MOV AX,@DATA
-MOV DS,AX
- 
-; enter your code here
+; Display the prompt message
+MOV DX, OFFSET ask
+MOV AH, 09H
+INT 21H
 
+; Take character input
+MOV AH, 01H   ; Function to take single character input
+INT 21H
+MOV char, AL  ; Store the input character
 
+; Newline for better formatting
+MOV DL, 0DH   ; Carriage return
+MOV AH, 02H
+INT 21H
+MOV DL, 0AH   ; Line feed
+INT 21H
 
+; Display the output message
+MOV DX, OFFSET result
+MOV AH, 09H
+INT 21H
 
- 
+; Display the input character
+MOV DL, char
+MOV AH, 02H
+INT 21H
 
-;exit to DOS
-               
-MOV AX,4C00H
+; Exit to DOS
+MOV AX, 4C00H
 INT 21H
 
 MAIN ENDP
-    END MAIN
+END MAIN
