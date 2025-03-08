@@ -71,4 +71,3 @@ Write a program to display a 10 x 10 solid box of asterisks.
 
 ---
 
-
