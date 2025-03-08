@@ -10,6 +10,7 @@ str db "ENTER THREE INITIALS: $"
 .CODE
 MAIN PROC
 
+
 ; initialize DS
 
 MOV AX,@DATA
