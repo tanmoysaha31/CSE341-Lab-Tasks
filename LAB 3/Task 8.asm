@@ -56,6 +56,7 @@ MOV DL, 13
 int 21h
 ; Line break done
 
+;consonant er jonno kono checking laagbe na direct print
 LEA DX, cmsg
 MOV AH, 09H
 INT 21H
