@@ -6,6 +6,7 @@
 ; declare variables here
 
 .CODE
+
 MAIN PROC
 
 ; initialize DS
