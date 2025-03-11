@@ -1,6 +1,5 @@
 .MODEL SMALL
 .STACK 100H
-
 .DATA
     ; No data section needed for this task
 
