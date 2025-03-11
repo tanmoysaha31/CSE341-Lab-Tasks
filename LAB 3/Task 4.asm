@@ -2,7 +2,6 @@
 .STACK 100H
 .DATA
     ; No data section needed for this task
-
 .CODE
 MAIN PROC
 
